@@ -18,7 +18,7 @@ public class Invocador {
         final String nombreServidor = "DF-Andres-William";
         try {
             Registry reg = LocateRegistry.getRegistry("localhost",3232);
-            IServer objetoRemoto = (IServer) reg.lookup("rmiserver");
+            IServer objetoRemoto = (IServer) reg.lookup(nombreServidor);
 
             String saludo = objetoRemoto.darBienvenida(nombreServidor);
             System.out.println(saludo);

@@ -17,19 +17,19 @@ import java.rmi.registry.LocateRegistry;
  */
 
 /**
- * Clase Server: implementación remota de IServer usando Java RMI
+ * Clase ServerLauncher: implementación remota de IServer usando Java RMI
  */
-public class Server extends UnicastRemoteObject implements IServer {
+public class ServerLauncher extends UnicastRemoteObject implements IServer {
 
     final String nombreServidor = "DF-Andres-William";
     // Constructor: exporta el objeto remoto para recibir llamadas RMI
-    public Server() throws RemoteException {
+    public ServerLauncher() throws RemoteException {
 
     }
 
     // Punto de entrada de la aplicación
     public static void main(String[] args) throws Exception {
-        Server s = new Server();    // Crea instancia del servidor
+        ServerLauncher s = new ServerLauncher();    // Crea instancia del servidor
         s.iniciarServidor();        // Inicia el registro RMI
     }
 
@@ -43,7 +43,7 @@ public class Server extends UnicastRemoteObject implements IServer {
 
             // Crea un RMI Registry embebido en este proceso, en el puerto indicado
             Registry reg = LocateRegistry.createRegistry(port);
-            // Registra (bind) este objeto bajo el nombre "rmiserver"
+            // Registra (bind) este objeto bajo el nombre "DF-Andres-William"
             reg.bind(nombreServidor, this);
 
         } catch (Exception e) {
