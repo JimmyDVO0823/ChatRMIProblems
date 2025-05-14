@@ -21,6 +21,7 @@ import java.rmi.registry.LocateRegistry;
  */
 public class Server extends UnicastRemoteObject implements IServer {
 
+    final String nombreServidor = "DF-Andres-William";
     // Constructor: exporta el objeto remoto para recibir llamadas RMI
     public Server() throws RemoteException {
 
@@ -43,7 +44,7 @@ public class Server extends UnicastRemoteObject implements IServer {
             // Crea un RMI Registry embebido en este proceso, en el puerto indicado
             Registry reg = LocateRegistry.createRegistry(port);
             // Registra (bind) este objeto bajo el nombre "rmiserver"
-            reg.bind("rmiserver", this);
+            reg.bind(nombreServidor, this);
 
         } catch (Exception e) {
             e.printStackTrace();
