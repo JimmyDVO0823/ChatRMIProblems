@@ -5,12 +5,15 @@
 package Interface;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-
+import Invocator.ClientCallBack;
 /**
  *
  * @author LENOVO LOQ
  */
 public interface IServer extends Remote{
     public String darBienvenida(String nombre)throws RemoteException;
-    public int calcularMayor(int num1, int num2)throws RemoteException;
+    //public void sendMessage(String mensaje,String sender,String recipent)throws RemoteException;
+    void registerClient(ClientCallBack cb, String username) throws RemoteException;
+    void sendDirectMessage(String from, String to, String msg) throws RemoteException;
+
 }

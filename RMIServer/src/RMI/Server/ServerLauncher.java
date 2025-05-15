@@ -10,6 +10,10 @@ import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
+import Interface.IServer;
+import Invocator.ClientCallBack;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  *
@@ -51,21 +55,29 @@ public class ServerLauncher extends UnicastRemoteObject implements IServer {
         }
     }
 
+    private final Map<String,ClientCallBack> clients = new ConcurrentHashMap<>();
+    @Override
+    public synchronized void registerClient(ClientCallBack cb, String username) {
+        clients.put(username, cb);
+    }
+
+    @Override
+    public synchronized void sendDirectMessage(String from, String to, String msg) throws RemoteException {
+        ClientCallBack target = clients.get(to);
+        if (target != null) {
+            try {
+                target.receiveMessage(from, msg);
+            } catch (RemoteException e) {
+                clients.remove(to); // limpia stub inválido
+            }
+        }
+    }
+
 
     //ESTO ES PARA IR PROBANDO, PROBABLEMENTE TERMINE SIENDO BORRADO (EL SEGUNDO SOBRE TODO)
     @Override
     public String darBienvenida(String nombre) throws RemoteException {
         System.out.println("Ejecutando el saludo");
         return "Hola " + nombre + ". Bienvenido!";
-    }
-
-    @Override
-    public int calcularMayor(int i, int i1) throws RemoteException {
-        System.out.println("Ejecutando el saludo");
-        if (i > i1) {
-            return i;
-        } else {
-            return i1;
-        }
     }
 }

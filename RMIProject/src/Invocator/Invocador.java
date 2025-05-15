@@ -22,6 +22,7 @@ public class Invocador {
 
             String saludo = objetoRemoto.darBienvenida(nombreServidor);
             System.out.println(saludo);
+            ClientCallbackImpl cb = new ClientCallbackImpl();
         } catch (Exception e) {
             e.printStackTrace();
         }

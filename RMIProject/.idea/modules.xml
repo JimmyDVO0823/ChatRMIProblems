@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RMIProject.iml" filepath="$PROJECT_DIR$/RMIProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RMIUser.iml" filepath="$PROJECT_DIR$/RMIUser.iml" />
     </modules>
   </component>
 </project>
