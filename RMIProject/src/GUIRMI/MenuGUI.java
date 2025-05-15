@@ -6,6 +6,8 @@ package GUIRMI;
 
 import Controlers.MenuControler;
 
+import javax.swing.*;
+
 /**
  *
  * @author igork
@@ -30,49 +32,76 @@ public class MenuGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtUsernameMenu = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtIPServerMenu = new javax.swing.JTextField();
+        cmdConect = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtServerNameMenu = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Usuario");
+        jLabel1.setText("Username");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtUsernameMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtUsernameMenuActionPerformed(evt);
             }
         });
 
         jLabel2.setText("IP Server");
 
-        jButton1.setText("Conectar");
+        txtIPServerMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIPServerMenuActionPerformed(evt);
+            }
+        });
+
+        cmdConect.setText("Conectar");
+        cmdConect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdConectActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Server Name");
+
+        txtServerNameMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtServerNameMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 123, Short.MAX_VALUE)
+                .addContainerGap(124, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(cmdConect)
+                        .addGap(119, 119, 119))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(128, 128, 128))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(120, 120, 120))))
+                        .addGap(126, 126, 126))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtServerNameMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(140, 140, 140)
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtUsernameMenu)
+                                .addComponent(txtIPServerMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(122, 122, 122))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,22 +109,66 @@ public class MenuGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(txtUsernameMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel3)
+                .addGap(12, 12, 12)
+                .addComponent(txtServerNameMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(txtIPServerMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(cmdConect)
+                .addGap(54, 54, 54))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    //GETTERS SETTERS
+
+
+    public JTextField getTxtUsernameMenu() {
+        return txtUsernameMenu;
+    }
+
+    public void setTxtUsernameMenu(JTextField txtUsernameMenu) {
+        this.txtUsernameMenu = txtUsernameMenu;
+    }
+
+    public JTextField getTxtServerNameMenu() {
+        return txtServerNameMenu;
+    }
+
+    public void setTxtServerNameMenu(JTextField txtServerNameMenu) {
+        this.txtServerNameMenu = txtServerNameMenu;
+    }
+
+    public JTextField getTxtIPServerMenu() {
+        return txtIPServerMenu;
+    }
+
+    public void setTxtIPServerMenu(JTextField txtIPServerMenu) {
+        this.txtIPServerMenu = txtIPServerMenu;
+    }
+
+    private void txtUsernameMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameMenuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtUsernameMenuActionPerformed
+
+    private void cmdConectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdConectActionPerformed
+        // TODO add your handling code here:
+        controler.startConection();
+    }//GEN-LAST:event_cmdConectActionPerformed
+
+    private void txtServerNameMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtServerNameMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtServerNameMenuActionPerformed
+
+    private void txtIPServerMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIPServerMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIPServerMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,10 +209,12 @@ public class MenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton cmdConect;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField txtIPServerMenu;
+    private javax.swing.JTextField txtServerNameMenu;
+    private javax.swing.JTextField txtUsernameMenu;
     // End of variables declaration//GEN-END:variables
 }

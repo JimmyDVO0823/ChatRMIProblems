@@ -25,7 +25,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ServerLauncher extends UnicastRemoteObject implements IServer {
 
-    final String nombreServidor = "DF-Andres-William";
+    final String nombreServidor = "DF_SERVER";
     // Constructor: exporta el objeto remoto para recibir llamadas RMI
     public ServerLauncher() throws RemoteException {
 
