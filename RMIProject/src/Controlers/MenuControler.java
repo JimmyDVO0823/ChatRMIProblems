@@ -1,5 +1,6 @@
 package Controlers;
 
+import GUIRMI.MenuChats;
 import GUIRMI.MenuGUI;
 import Interface.IServer;
 import Invocator.ClientCallbackImpl;
@@ -46,6 +47,7 @@ public class MenuControler {
             //Se crea el objeto CallBack
             ClientCallbackImpl cb = ClientCallbackImpl.getInstance();
             menu.setVisible(false);
+            MenuChats.main(new String[0]);
             //Abrimos el Scanner para elegir si somos el remitente
 
             /*
