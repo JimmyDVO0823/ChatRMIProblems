@@ -20,30 +20,44 @@ public class MenuControler {
 
     //EL PÓRT DE PRUEBA ES 3232
     public void startConection() {
-        String nombreServidor = menu.getTxtServerNameMenu().getText();
-        String username = menu.getTxtUsernameMenu().getText();
-        int port = Integer.parseInt(menu.getTxtIPServerMenu().getText());
+
+        int port = 0;
+        String serverName = "";
+        String username = "";
+
         try {
-            //Se da un nombre
-            Scanner sc = new Scanner(System.in);
+            serverName = menu.getTxtServerNameMenu().getText();
+            username = menu.getTxtUsernameMenu().getText();
+            port = Integer.parseInt(menu.getTxtIPServerMenu().getText());
 
 
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ingrese los datos del usuario");
+            return;
+            //e.printStackTrace();
+        }
+
+        try {
             //Se conecta al servidor
             Registry reg = LocateRegistry.getRegistry("localhost", port);
-            IServer server = (IServer) reg.lookup(nombreServidor);
+            IServer server = (IServer) reg.lookup(serverName);
+
 
             //Se crea el objeto CallBack
             ClientCallbackImpl cb = new ClientCallbackImpl();
 
-            //Abrimos el Scanner para elegir el remitente y destinatario
-            //Scanner sc = new Scanner(System.in);
+            //Abrimos el Scanner para elegir si somos el remitente
             System.out.println("Escriba \"Y\" si usted es el remitente");
+            Scanner sc = new Scanner(System.in);
             String remitente = sc.nextLine();
-
+            sc.close();
+            //esto es un minitest
             if (remitente.toLowerCase().equals("y")) test1(cb, server,username);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al conectar con el servidor");
+            System.out.println("error en conectar al servidor");
+            //e.printStackTrace();
         }
     }
 
@@ -51,8 +65,8 @@ public class MenuControler {
         try {
             System.out.println("TEST");
             Scanner sc = new Scanner(System.in);
-            //System.out.println("Ingresar nombre de usuario");
-            //String username = sc.nextLine();
+
+            //Se registra el cliente
             server.registerClient(cb, username);
 
             System.out.println("Usuario registrado\nIngrese su destinatario");

@@ -25,7 +25,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ServerLauncher extends UnicastRemoteObject implements IServer {
 
-    final String nombreServidor = "DF_SERVER";
+    final String nombreServidor = "SERVER";
     // Constructor: exporta el objeto remoto para recibir llamadas RMI
     public ServerLauncher() throws RemoteException {
 
@@ -40,7 +40,7 @@ public class ServerLauncher extends UnicastRemoteObject implements IServer {
     // Metodo para levantar el registry y hacer bind del servidor
     public void iniciarServidor() {
         try {
-            int port = 3232;    // Puerto en el que escuchará el RMI Registry
+            int port = 2222;    // Puerto en el que escuchará el RMI Registry
             // Obtiene la IP local para mostrar dónde está escuchando
             String dirIP = (InetAddress.getLocalHost().toString());
             System.out.println("Escuchando en " + dirIP + port); //pa confirmar 👍
