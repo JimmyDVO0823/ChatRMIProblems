@@ -5,3 +5,12 @@ Todas las aclaraciones que tengan que decir, háganlas acá 👍
 	La base de datos se va a dejar, tal vez para en un momento poder crear cuenta
 
 	Se va a manejar con ConcurrentHashMap, pero queda abierto a debate
+
+Flujo de trabajo
+  	Hacer la GUI del menú funcional 👍
+   	-Manejar sus excepciones👍
+    	-Probar con otros dispositivos
+
+     	Hacer la GUI de mensajes privados funcional
+
+      	Hacer la GUI de mensajes publicos funcional
