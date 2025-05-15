@@ -9,9 +9,9 @@ Todas las aclaraciones que tengan que decir, háganlas acá 👍
 Flujo de trabajo
 
   	1)Hacer la GUI del menú funcional 👍
-   
+
    	1.1)Manejar sus excepciones👍
-    
+
     	1.2)Probar con otros dispositivos
 
      	2)Hacer la GUI de mensajes privados funcional
