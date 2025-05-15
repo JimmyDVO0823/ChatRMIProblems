@@ -8,10 +8,10 @@ Todas las aclaraciones que tengan que decir, háganlas acá 👍
 
 Flujo de trabajo
 
-  	Hacer la GUI del menú funcional 👍
-   	-Manejar sus excepciones👍
-    	-Probar con otros dispositivos
+  	1)Hacer la GUI del menú funcional 👍
+   	1.1)Manejar sus excepciones👍
+    	1.2)Probar con otros dispositivos
 
-     	Hacer la GUI de mensajes privados funcional
+     	2)Hacer la GUI de mensajes privados funcional
 
-      	Hacer la GUI de mensajes publicos funcional
+      	3)Hacer la GUI de mensajes publicos funcional
