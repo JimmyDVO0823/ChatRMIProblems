@@ -61,6 +61,13 @@ public class ServerLauncher extends UnicastRemoteObject implements IServer {
         clients.put(username, cb);
     }
 
+    /**
+     * El remitente envia un mensaje directo al destinatario
+     * @param from Remitente
+     * @param to Destinatario
+     * @param msg Mensaje
+     * @throws RemoteException
+     */
     @Override
     public synchronized void sendDirectMessage(String from, String to, String msg) throws RemoteException {
         ClientCallBack target = clients.get(to);

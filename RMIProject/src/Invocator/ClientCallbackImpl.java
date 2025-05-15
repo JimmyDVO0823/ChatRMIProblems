@@ -9,4 +9,9 @@ public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCal
     public void receiveMessage(String from, String message) {
         System.out.println(from + ": " + message);
     }
+
+    @Override
+    public void sendMessage(String to, String message) throws RemoteException {
+
+    }
 }
