@@ -44,15 +44,19 @@ public class MenuControler {
 
 
             //Se crea el objeto CallBack
-            ClientCallbackImpl cb = new ClientCallbackImpl();
-
+            ClientCallbackImpl cb = ClientCallbackImpl.getInstance();
+            menu.setVisible(false);
             //Abrimos el Scanner para elegir si somos el remitente
+
+            /*
             System.out.println("Escriba \"Y\" si usted es el remitente");
             Scanner sc = new Scanner(System.in);
             String remitente = sc.nextLine();
             sc.close();
             //esto es un minitest
+
             if (remitente.toLowerCase().equals("y")) test1(cb, server,username);
+             */
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al conectar con el servidor");

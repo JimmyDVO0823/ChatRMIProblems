@@ -1,0 +1,9 @@
+Todas las aclaraciones que tengan que decir, háganlas acá 👍
+
+	Probablemente la clase User no vaya a ser utilizada, pues se va a manejar con ClientCallBack
+
+	La base de datos se va a dejar, tal vez para en un momento poder crear cuenta
+
+	Se va a manejar con ConcurrentHashMap, pero queda abierto a debate
+	
+	Hay

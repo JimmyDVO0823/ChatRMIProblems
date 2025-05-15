@@ -32,7 +32,7 @@ public class Invocador {
             System.out.println(saludo);
 
             //Se crea el objeto CallBack
-            ClientCallbackImpl cb = new ClientCallbackImpl();
+            ClientCallbackImpl cb = ClientCallbackImpl.getInstance();
 
             //Abrimos el Scanner para elegir el remitente y destinatario
             //Scanner sc = new Scanner(System.in);
