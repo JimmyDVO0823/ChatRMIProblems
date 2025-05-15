@@ -4,16 +4,19 @@
  */
 package GUIRMI;
 
+import Controlers.MenuControler;
+
 /**
  *
  * @author igork
  */
 public class MenuGUI extends javax.swing.JFrame {
-
+    private MenuControler controler;
     /**
      * Creates new form GUIPrivado
      */
     public MenuGUI() {
+        controler = new MenuControler(this);
         initComponents();
     }
 
