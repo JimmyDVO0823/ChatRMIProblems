@@ -51,6 +51,7 @@ public class MenuControler {
             //Se crea el objeto CallBack
             ClientCallbackImpl cb = ClientCallbackImpl.getInstance();
             menu.setVisible(false);
+            server.registerClient(cb, username);
             MenuChats.main(new String[0]);
             //Abrimos el Scanner para elegir si somos el remitente
 

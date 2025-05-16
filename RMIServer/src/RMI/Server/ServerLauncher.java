@@ -59,6 +59,7 @@ public class ServerLauncher extends UnicastRemoteObject implements IServer {
     
     @Override
     public synchronized void registerClient(ClientCallBack cb, String username) {
+        System.out.println("Cliente " + username + " registrado");
         clients.put(username, cb);
     }
 

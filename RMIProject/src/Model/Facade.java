@@ -11,4 +11,8 @@ public class Facade {
         }
         return instance;
     }
+
+    public void startChat(){
+
+    }
 }
