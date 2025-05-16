@@ -1,20 +1,14 @@
 package Model;
 
-import GUIRMI.MenuChats;
-import GUIRMI.MenuGUI;
+import Controlers.ISubscriber;
 import Interface.IServer;
-import Model.ClientCallBack;
-import Model.ClientCallbackImpl;
-import Model.Facade;
 
 import javax.swing.*;
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.Scanner;
 
 public class Facade {
+    ISubscriber subscriber;
     private IServer server;
     private Registry reg;
     private String username;
@@ -31,9 +25,19 @@ public class Facade {
         return instance;
     }
 
+    //para ver si sirve
+    public static Facade getInstance(ISubscriber subscriber) {
+        if (instance == null) {
+            instance = new Facade();
+        }
+        instance.subscribe(subscriber);
+        return instance;
+    }
+
     public void registerClient(ClientCallBack callBack,String username) throws RemoteException {
         try {
             server.registerClient(callBack,username);
+            setUsername(username);
         } catch (RemoteException e) {
             JOptionPane.showMessageDialog(null, "Error al registrar el Cliente");
             throw new RuntimeException(e);
@@ -43,6 +47,14 @@ public class Facade {
     public void sendDirectMessage(String message) {
         MessagesThread thread = new MessagesThread(username,reciver,message,server);
         thread.start();
+    }
+
+    public void notifyPrivate(String message){
+        subscriber.reciveNotification(message);
+    }
+
+    public void subscribe(ISubscriber subscriber){
+        this.subscriber = subscriber;
     }
 
     //GETTERS SETTERS

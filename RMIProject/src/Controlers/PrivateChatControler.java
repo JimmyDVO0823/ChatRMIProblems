@@ -3,26 +3,32 @@ package Controlers;
 import GUIRMI.PrivateChatGUI;
 import Model.Facade;
 
-public class PrivateChatControler {
+public class PrivateChatControler implements ISubscriber {
     private PrivateChatGUI view;
     Facade facade;
 
     public PrivateChatControler(PrivateChatGUI view) {
         this.view = view;
-        facade = Facade.getInstance();
+        facade = Facade.getInstance(this);
         updateUser(facade.getReciver());
     }
 
-    public void goBack(){
+    public void goBack() {
         view.getLblUser().setText(facade.getReciver());
     }
 
-    private void updateUser(String user){
+    private void updateUser(String user) {
         view.getLblUser().setText(user);
     }
 
-    private void sendPrivateMessage(String message){
-        facade.
+    public void sendMessage() {
+        String message = view.getTxtMessagePrivateArea().getText();
+        facade.sendDirectMessage(message);
     }
 
+
+    @Override
+    public void reciveNotification(String notification) {
+        view.getTxtHistory().append(notification);
+    }
 }

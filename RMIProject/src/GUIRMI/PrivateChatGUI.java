@@ -49,6 +49,11 @@ public class PrivateChatGUI extends javax.swing.JFrame {
         jLabel1.setText("Historial Privado");
 
         cmdSendMessage.setText("Enviar Mensaje");
+        cmdSendMessage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdSendMessageActionPerformed(evt);
+            }
+        });
 
         cmdBackChatsMenu.setText("Reg al Menu");
         cmdBackChatsMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +120,11 @@ public class PrivateChatGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         controler.goBack();
     }//GEN-LAST:event_cmdBackChatsMenuActionPerformed
+
+    private void cmdSendMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSendMessageActionPerformed
+        // TODO add your handling code here:
+        controler.sendMessage();
+    }//GEN-LAST:event_cmdSendMessageActionPerformed
 
     /**
      * @param args the command line arguments

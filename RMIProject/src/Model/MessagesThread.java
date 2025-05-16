@@ -20,7 +20,7 @@ public class MessagesThread extends Thread {
 
     public void run() {
         try {
-            
+
             server.sendDirectMessage(from, to, message);
 
         } catch (RemoteException e) {
