@@ -195,7 +195,7 @@ public class MenuGUI extends javax.swing.JFrame {
 
     private void cmdConectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdConectActionPerformed
         // TODO add your handling code here:
-        controler.startConection();
+        controler.conectToServer();
     }//GEN-LAST:event_cmdConectActionPerformed
 
     private void txtServerNameMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtServerNameMenuActionPerformed
