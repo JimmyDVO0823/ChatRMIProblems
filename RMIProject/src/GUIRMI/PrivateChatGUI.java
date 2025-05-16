@@ -14,13 +14,25 @@ import javax.swing.*;
  */
 public class PrivateChatGUI extends javax.swing.JFrame {
     private PrivateChatControler controler;
+    private static PrivateChatGUI instance;
     /**
      * Creates new form GUIMenu
      */
-    public PrivateChatGUI() {
+
+    //APLICAMOS SINGLETON PARA QUE NO SE ABRAN VARIOS CHATS PRIVADOS A LA VEZ
+    private PrivateChatGUI() {
         initComponents();
         controler = new PrivateChatControler(this);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
+
+    public static PrivateChatGUI getInstance() {
+        if (instance == null) {
+            instance = new PrivateChatGUI();
+        }
+        return instance;
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -31,9 +31,21 @@ public class ChatMenuControler {
 
     public void startPrivateChat(){
         String reciver = menu.getLstConectedUsers().getSelectedValue();
-        PrivateChatGUI.main(new String[0]);
-        System.out.println("Destinatario: " + reciver);
         facade.setReciver(reciver);
+        PrivateChatGUI privateChatGUI = PrivateChatGUI.getInstance();
+        privateChatGUI.getLblUser().setText(reciver);
+
+
+        //Se cerea la ueva vista, si es que deberia
+        if (privateChatGUI.isShowing() && privateChatGUI.isVisible()){
+            System.out.println("iguales");
+            return;
+        }
+
+        privateChatGUI.setVisible(true);
+
+        //PrivateChatGUI.main(new String[0]);
+        System.out.println("Destinatario: " + reciver);
     }
 
 }

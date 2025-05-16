@@ -50,8 +50,11 @@ public class MenuControler {
             //Se crea el objeto CallBack
             ClientCallbackImpl cb = ClientCallbackImpl.getInstance();
             facade.registerClient(cb, username);
+
+            //Pa probar si queda bien asi
             menu.setVisible(false);
-            MenuChats.main(new String[0]);
+            MenuChats menuChats = new MenuChats();
+            menuChats.setVisible(true);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al conectar con el servidor");
