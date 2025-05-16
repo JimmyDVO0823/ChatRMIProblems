@@ -34,10 +34,12 @@ public class MenuGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtUsernameMenu = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtIPServerMenu = new javax.swing.JTextField();
+        txtServerIPMenu = new javax.swing.JTextField();
         cmdConect = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtServerNameMenu = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtPort = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,11 +51,11 @@ public class MenuGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("IP Server");
+        jLabel2.setText("Port");
 
-        txtIPServerMenu.addActionListener(new java.awt.event.ActionListener() {
+        txtServerIPMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIPServerMenuActionPerformed(evt);
+                txtServerIPMenuActionPerformed(evt);
             }
         });
 
@@ -72,19 +74,27 @@ public class MenuGUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Server IP");
+
+        txtPort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPortActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(cmdConect)
-                        .addGap(119, 119, 119))
+                        .addComponent(jLabel3)
+                        .addGap(122, 122, 122))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(126, 126, 126))))
+                        .addComponent(jLabel4)
+                        .addGap(136, 136, 136))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtServerNameMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -94,14 +104,20 @@ public class MenuGUI extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(80, 80, 80)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtUsernameMenu)
-                                .addComponent(txtIPServerMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtUsernameMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtPort, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtServerIPMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
+                .addContainerGap(80, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(122, 122, 122))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(cmdConect)
+                        .addGap(119, 119, 119))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(145, 145, 145))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,11 +130,15 @@ public class MenuGUI extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(12, 12, 12)
                 .addComponent(txtServerNameMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(txtServerIPMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(12, 12, 12)
-                .addComponent(txtIPServerMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtPort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(cmdConect)
                 .addGap(54, 54, 54))
         );
@@ -126,9 +146,25 @@ public class MenuGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JTextField getTxtPort() {
+        return txtPort;
+    }
+
+    public void setTxtPort(JTextField txtPort) {
+        this.txtPort = txtPort;
+    }
+
+    public JTextField getTxtServerIPMenu() {
+        return txtServerIPMenu;
+    }
+
+    public void setTxtServerIPMenu(JTextField txtServerIPMenu) {
+        this.txtServerIPMenu = txtServerIPMenu;
+    }
+
     //GETTERS SETTERS
-
-
+    
+    
     public JTextField getTxtUsernameMenu() {
         return txtUsernameMenu;
     }
@@ -146,11 +182,11 @@ public class MenuGUI extends javax.swing.JFrame {
     }
 
     public JTextField getTxtIPServerMenu() {
-        return txtIPServerMenu;
+        return txtServerIPMenu;
     }
 
     public void setTxtIPServerMenu(JTextField txtIPServerMenu) {
-        this.txtIPServerMenu = txtIPServerMenu;
+        this.txtServerIPMenu = txtIPServerMenu;
     }
 
     private void txtUsernameMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameMenuActionPerformed
@@ -166,10 +202,15 @@ public class MenuGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtServerNameMenuActionPerformed
 
-    private void txtIPServerMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIPServerMenuActionPerformed
+    private void txtServerIPMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtServerIPMenuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIPServerMenuActionPerformed
+    }//GEN-LAST:event_txtServerIPMenuActionPerformed
 
+    private void txtPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPortActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPortActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -213,7 +254,9 @@ public class MenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField txtIPServerMenu;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField txtPort;
+    private javax.swing.JTextField txtServerIPMenu;
     private javax.swing.JTextField txtServerNameMenu;
     private javax.swing.JTextField txtUsernameMenu;
     // End of variables declaration//GEN-END:variables

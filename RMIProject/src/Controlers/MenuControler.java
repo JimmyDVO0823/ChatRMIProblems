@@ -22,46 +22,32 @@ public class MenuControler {
         facade = Facade.getInstance();
     }
 
-    //EL PÓRT DE PRUEBA ES 3232
     public void startConection() {
-
-        int port;
-        String serverName;
-        String username;
-
         try {
-            serverName = menu.getTxtServerNameMenu().getText();
-            username = menu.getTxtUsernameMenu().getText();
-            port = Integer.parseInt(menu.getTxtIPServerMenu().getText());
+            String serverIp   = menu.getTxtServerIPMenu().getText();    // p.ej. 192.168.1.50
+            int    port       = Integer.parseInt(menu.getTxtPort().getText()); // p.ej. 3232
+            String serverName = menu.getTxtServerNameMenu().getText();  // p.ej. "SERVER"
+            String username   = menu.getTxtUsernameMenu().getText();
 
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Ingrese los datos del usuario");
-            return;
-            //e.printStackTrace();
-        }
-
-        try {
-            //Se conecta al servidor
-            Registry reg = LocateRegistry.getRegistry("localhost", port);
-            IServer server = (IServer) reg.lookup(serverName);
+            // Conexión al registro en la IP/puerto indicados
+            Registry reg      = LocateRegistry.getRegistry(serverIp, port);
+            IServer server    = (IServer) reg.lookup(serverName);
             facade.setServer(server);
 
-            //Se crea el objeto CallBack
+            // Registro del callback
             ClientCallbackImpl cb = ClientCallbackImpl.getInstance();
             facade.registerClient(cb, username);
 
-            //Pa probar si queda bien asi
+            // Avanza en la UI
             menu.setVisible(false);
-            MenuChats menuChats = new MenuChats();
-            menuChats.setVisible(true);
+            new MenuChats().setVisible(true);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al conectar con el servidor");
-            System.out.println("error en conectar al servidor");
-            //e.printStackTrace();
+            e.printStackTrace();
         }
     }
+
 
 
 }
