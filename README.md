@@ -6,14 +6,15 @@ Todas las aclaraciones que tengan que decir, háganlas acá 👍
 
 	Se va a manejar con ConcurrentHashMap, pero queda abierto a debate
 
+
 Flujo de trabajo
 
-  	1)Hacer la GUI del menú funcional 👍
+	1)Hacer la GUI del menú funcional 👍
 
-   	1.1)Manejar sus excepciones👍
+	1.1)Manejar sus excepciones👍
 
-    	1.2)Probar con otros dispositivos
+	1.2)Probar con otros dispositivos
 
-     	2)Hacer la GUI de mensajes privados funcional
+	2)Hacer la GUI de mensajes privados funcional
 
-      	3)Hacer la GUI de mensajes publicos funcional
+	3)Hacer la GUI de mensajes publicos funcional
