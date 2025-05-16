@@ -1,6 +1,7 @@
 package Model;
 
 public class Facade {
+    private String reciver;
     private static Facade instance;
     private Facade() {
 
@@ -14,5 +15,13 @@ public class Facade {
 
     public void startChat(){
 
+    }
+
+    public String getReciver() {
+        return reciver;
+    }
+
+    public void setReciver(String reciver) {
+        this.reciver = reciver;
     }
 }

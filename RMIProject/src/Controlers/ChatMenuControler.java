@@ -32,6 +32,8 @@ public class ChatMenuControler {
     public void startPrivateChat(){
         String reciver = menu.getLstConectedUsers().getSelectedValue();
         PrivateChatGUI.main(new String[0]);
+        System.out.println("Destinatario: " + reciver);
+        facade.setReciver(reciver);
     }
 
 }

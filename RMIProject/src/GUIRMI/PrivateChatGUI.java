@@ -6,6 +6,8 @@ package GUIRMI;
 
 import Controlers.PrivateChatControler;
 
+import javax.swing.*;
+
 /**
  *
  * @author igork
@@ -16,8 +18,8 @@ public class PrivateChatGUI extends javax.swing.JFrame {
      * Creates new form GUIMenu
      */
     public PrivateChatGUI() {
-        controler = new PrivateChatControler(this);
         initComponents();
+        controler = new PrivateChatControler(this);
     }
 
     /**
@@ -30,21 +32,23 @@ public class PrivateChatGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtHistory = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        cmdSendMessage = new javax.swing.JButton();
         cmdBackChatsMenu = new javax.swing.JButton();
+        lblUser = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtMessagePrivateArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtHistory.setColumns(20);
+        txtHistory.setRows(5);
+        jScrollPane1.setViewportView(txtHistory);
 
         jLabel1.setText("Historial Privado");
 
-        jButton1.setText("Enviar Mensaje");
+        cmdSendMessage.setText("Enviar Mensaje");
 
         cmdBackChatsMenu.setText("Reg al Menu");
         cmdBackChatsMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -53,6 +57,12 @@ public class PrivateChatGUI extends javax.swing.JFrame {
             }
         });
 
+        lblUser.setText("Usuario");
+
+        txtMessagePrivateArea.setColumns(20);
+        txtMessagePrivateArea.setRows(5);
+        jScrollPane2.setViewportView(txtMessagePrivateArea);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -60,36 +70,39 @@ public class PrivateChatGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(213, 213, 213)
+                .addComponent(lblUser)
+                .addGap(79, 79, 79))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jTextField1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(cmdBackChatsMenu)
-                            .addComponent(jButton1))
-                        .addGap(40, 40, 40))))
+                            .addComponent(cmdSendMessage))
+                        .addGap(55, 55, 55))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(4, 4, 4)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(lblUser))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmdSendMessage)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cmdBackChatsMenu)))
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -100,6 +113,7 @@ public class PrivateChatGUI extends javax.swing.JFrame {
 
     private void cmdBackChatsMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBackChatsMenuActionPerformed
         // TODO add your handling code here:
+        controler.goBack();
     }//GEN-LAST:event_cmdBackChatsMenuActionPerformed
 
     /**
@@ -140,12 +154,41 @@ public class PrivateChatGUI extends javax.swing.JFrame {
         });
     }
 
+    //GETTERS SETTERS
+
+
+    public JLabel getLblUser() {
+        return lblUser;
+    }
+
+    public void setLblUser(JLabel lblUser) {
+        this.lblUser = lblUser;
+    }
+
+    public JTextArea getTxtHistory() {
+        return txtHistory;
+    }
+
+    public void setTxtHistory(JTextArea txtHistory) {
+        this.txtHistory = txtHistory;
+    }
+
+    public JTextArea getTxtMessagePrivateArea() {
+        return txtMessagePrivateArea;
+    }
+
+    public void setTxtMessagePrivateArea(JTextArea txtMessagePrivateArea) {
+        this.txtMessagePrivateArea = txtMessagePrivateArea;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cmdBackChatsMenu;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton cmdSendMessage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblUser;
+    private javax.swing.JTextArea txtHistory;
+    private javax.swing.JTextArea txtMessagePrivateArea;
     // End of variables declaration//GEN-END:variables
 }
