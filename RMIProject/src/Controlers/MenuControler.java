@@ -14,7 +14,6 @@ import java.rmi.registry.Registry;
 import java.util.Scanner;
 
 public class MenuControler {
-    final String SERVER_NAME = "DF-Andres-William";
     MenuGUI menu;
     private Facade facade;
 
@@ -26,9 +25,9 @@ public class MenuControler {
     //EL PÓRT DE PRUEBA ES 3232
     public void startConection() {
 
-        int port = 0;
-        String serverName = "";
-        String username = "";
+        int port;
+        String serverName;
+        String username;
 
         try {
             serverName = menu.getTxtServerNameMenu().getText();
@@ -46,24 +45,13 @@ public class MenuControler {
             //Se conecta al servidor
             Registry reg = LocateRegistry.getRegistry("localhost", port);
             IServer server = (IServer) reg.lookup(serverName);
-
+            facade.setServer(server);
 
             //Se crea el objeto CallBack
             ClientCallbackImpl cb = ClientCallbackImpl.getInstance();
+            facade.registerClient(cb, username);
             menu.setVisible(false);
-            server.registerClient(cb, username);
             MenuChats.main(new String[0]);
-            //Abrimos el Scanner para elegir si somos el remitente
-
-            /*
-            System.out.println("Escriba \"Y\" si usted es el remitente");
-            Scanner sc = new Scanner(System.in);
-            String remitente = sc.nextLine();
-            sc.close();
-            //esto es un minitest
-
-            if (remitente.toLowerCase().equals("y")) test1(cb, server,username);
-             */
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al conectar con el servidor");
@@ -72,26 +60,5 @@ public class MenuControler {
         }
     }
 
-    public static void test1(ClientCallBack cb, IServer server, String username) throws RemoteException {
-        try {
-            System.out.println("TEST");
-            Scanner sc = new Scanner(System.in);
-
-            //Se registra el cliente
-            server.registerClient(cb, username);
-
-            System.out.println("Usuario registrado\nIngrese su destinatario");
-            String receiver = sc.nextLine();
-
-            System.out.println("Ingrese su mensaje al destinatario " + receiver);
-            String message = sc.nextLine();
-
-            server.sendDirectMessage(username, receiver, message);
-            sc.close();
-        } catch (RemoteException e) {
-            JOptionPane.showMessageDialog(null, "Error al registrar el server");
-            throw new RuntimeException(e);
-        }
-    }
 
 }
