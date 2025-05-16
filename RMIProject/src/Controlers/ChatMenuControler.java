@@ -5,6 +5,7 @@
 package Controlers;
 
 import GUIRMI.MenuChats;
+import GUIRMI.PrivateChatGUI;
 import Model.Facade;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class ChatMenuControler {
 
     public void startPrivateChat(){
         String reciver = menu.getLstConectedUsers().getSelectedValue();
+        PrivateChatGUI.main(new String[0]);
     }
 
 }
