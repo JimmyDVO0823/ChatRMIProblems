@@ -21,4 +21,8 @@ public class PrivateChatControler {
         view.getLblUser().setText(user);
     }
 
+    private void sendPrivateMessage(String message){
+        facade.
+    }
+
 }

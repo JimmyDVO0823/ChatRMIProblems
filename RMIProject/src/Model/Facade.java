@@ -17,6 +17,10 @@ public class Facade {
 
     }
 
+    public void sendDirectMessage(String message){
+
+    }
+
     public String getReciver() {
         return reciver;
     }
