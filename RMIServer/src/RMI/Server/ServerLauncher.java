@@ -11,7 +11,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
 import Interface.IServer;
-import Invocator.ClientCallBack;
+import Model.ClientCallBack;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -56,6 +56,7 @@ public class ServerLauncher extends UnicastRemoteObject implements IServer {
     }
 
     private final Map<String,ClientCallBack> clients = new ConcurrentHashMap<>();
+    
     @Override
     public synchronized void registerClient(ClientCallBack cb, String username) {
         clients.put(username, cb);

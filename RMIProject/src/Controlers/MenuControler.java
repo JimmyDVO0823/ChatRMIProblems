@@ -3,6 +3,7 @@ package Controlers;
 import GUIRMI.MenuChats;
 import GUIRMI.MenuGUI;
 import Interface.IServer;
+import Model.ClientCallBack;
 import Model.ClientCallbackImpl;
 import Model.Facade;
 
@@ -70,7 +71,7 @@ public class MenuControler {
         }
     }
 
-    public static void test1(ClientCallbackImpl cb, IServer server,String username) throws RemoteException {
+    public static void test1(ClientCallBack cb, IServer server, String username) throws RemoteException {
         try {
             System.out.println("TEST");
             Scanner sc = new Scanner(System.in);

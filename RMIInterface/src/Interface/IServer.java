@@ -5,7 +5,7 @@
 package Interface;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import Invocator.ClientCallBack;
+import Model.ClientCallBack;
 /**
  *
  * @author LENOVO LOQ
