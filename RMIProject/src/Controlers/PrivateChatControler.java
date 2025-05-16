@@ -29,6 +29,8 @@ public class PrivateChatControler implements ISubscriber {
 
     @Override
     public void reciveNotification(String notification) {
-        view.getTxtHistory().append(notification);
+        String space = "";
+        if (!view.getTxtHistory().getText().equals(""))space = "\n";
+        view.getTxtHistory().append(space + notification);
     }
 }

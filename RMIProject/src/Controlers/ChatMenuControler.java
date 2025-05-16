@@ -31,9 +31,14 @@ public class ChatMenuControler {
 
     public void startPrivateChat(){
         String reciver = menu.getLstConectedUsers().getSelectedValue();
-        facade.setReciver(reciver);
         PrivateChatGUI privateChatGUI = PrivateChatGUI.getInstance();
+        if (reciver.equals(facade.getReciver()) && privateChatGUI.isShowing() && privateChatGUI.isVisible()){
+            return;
+        }
+        facade.setReciver(reciver);
         privateChatGUI.getLblUser().setText(reciver);
+        privateChatGUI.getTxtHistory().setText("");
+        privateChatGUI.getTxtMessagePrivateArea().setText("");
 
 
         //Se cerea la ueva vista, si es que deberia
