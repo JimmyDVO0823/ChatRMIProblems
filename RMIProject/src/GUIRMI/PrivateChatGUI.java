@@ -4,16 +4,19 @@
  */
 package GUIRMI;
 
+import Controlers.PrivateChatControler;
+
 /**
  *
  * @author igork
  */
 public class PrivateChatGUI extends javax.swing.JFrame {
-
+    private PrivateChatControler controler;
     /**
      * Creates new form GUIMenu
      */
     public PrivateChatGUI() {
+        controler = new PrivateChatControler(this);
         initComponents();
     }
 

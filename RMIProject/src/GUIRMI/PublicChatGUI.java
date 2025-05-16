@@ -4,16 +4,19 @@
  */
 package GUIRMI;
 
+import Controlers.PublicChatControler;
+
 /**
  *
  * @author igork
  */
 public class PublicChatGUI extends javax.swing.JFrame {
-
+    private PublicChatControler controler;
     /**
      * Creates new form GUIPublico
      */
     public PublicChatGUI() {
+        controler = new PublicChatControler(this);
         initComponents();
     }
 
