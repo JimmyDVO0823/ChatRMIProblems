@@ -5,19 +5,21 @@
 package GUIRMI;
 
 import Controlers.ChatMenuControler;
-import javax.swing.JList;
+
+import javax.swing.*;
 
 /**
  *
  * @author LENOVO LOQ
  */
 public class MenuChats extends javax.swing.JFrame {
-
+    private DefaultListModel model;
     ChatMenuControler controler;
     /**
      * Creates new form MenuChats
      */
     public MenuChats() {
+        model = new DefaultListModel();
         controler = new ChatMenuControler(this);
         initComponents();
     }
@@ -159,7 +161,15 @@ public class MenuChats extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //GETTERS SETTERS
-    
+
+    public DefaultListModel getModel() {
+        return model;
+    }
+
+    public void setModel(DefaultListModel model) {
+        this.model = model;
+    }
+
     public JList<String> getLstConectedUsers() {
         return lstConectedUsers;
     }
@@ -171,6 +181,7 @@ public class MenuChats extends javax.swing.JFrame {
     
     private void cmdStartPrivateChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdStartPrivateChatActionPerformed
         // TODO add your handling code here:
+        controler.startPrivateChat();
     }//GEN-LAST:event_cmdStartPrivateChatActionPerformed
 
     private void cmdStartPublicChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdStartPublicChatActionPerformed

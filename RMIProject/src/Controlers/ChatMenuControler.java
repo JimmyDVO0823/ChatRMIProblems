@@ -5,17 +5,31 @@
 package Controlers;
 
 import GUIRMI.MenuChats;
+import Model.Facade;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author LENOVO LOQ
  */
 public class ChatMenuControler {
-
+    private Facade facade;
     private MenuChats menu;
+    ArrayList<String> model;
 
     public ChatMenuControler(MenuChats menu) {
+        model = new ArrayList<>();
+        model.add("Dfranco");
+        model.add("William");
+        model.add("Andres");
+        facade = Facade.getInstance();
         this.menu = menu;
+        menu.getModel().addAll(model);
+    }
+
+    public void startPrivateChat(){
+        String reciver = menu.getLstConectedUsers().getSelectedValue();
     }
 
 }

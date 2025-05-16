@@ -3,7 +3,8 @@ package Controlers;
 import GUIRMI.MenuChats;
 import GUIRMI.MenuGUI;
 import Interface.IServer;
-import Invocator.ClientCallbackImpl;
+import Model.ClientCallbackImpl;
+import Model.Facade;
 
 import javax.swing.*;
 import java.rmi.RemoteException;
@@ -14,9 +15,11 @@ import java.util.Scanner;
 public class MenuControler {
     final String SERVER_NAME = "DF-Andres-William";
     MenuGUI menu;
+    private Facade facade;
 
     public MenuControler(MenuGUI menu) {
         this.menu = menu;
+        facade = Facade.getInstance();
     }
 
     //EL PÓRT DE PRUEBA ES 3232

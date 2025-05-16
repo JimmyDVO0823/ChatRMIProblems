@@ -1,4 +1,4 @@
-package Invocator;
+package Model;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
