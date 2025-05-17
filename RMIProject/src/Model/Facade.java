@@ -65,9 +65,10 @@ public class Facade {
 
     public void updateConectedUsers(ArrayList<String> users){
         users.remove(username);
-        for (int i = 0; i < subscribers.size(); i++) {
-            ISubscriber subscriber = subscribers.get(i);
-            if (subscriber instanceof ChatMenuControler){
+        System.out.println("lista de usuarios sin el usuario propio:");
+        System.out.println(users);
+        for (ISubscriber subscriber : subscribers) {
+            if (subscriber instanceof ChatMenuControler) {
                 ((ChatMenuControler) subscriber).updateConectedUsers(users);
             }
         }
