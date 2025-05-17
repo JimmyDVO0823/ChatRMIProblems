@@ -39,8 +39,9 @@ public class MenuControler {
 
             // Registro del callback, que es el objeto remoto que utiliza el servidor para hacer referencia al usuario
             ClientCallbackImpl cb = ClientCallbackImpl.getInstance();
-            new MenuChats().setVisible(true);
+            MenuChats menuChats = new MenuChats();
             facade.registerClient(cb, username); //La fachada maneja la logica del servidor
+            menuChats.setVisible(true);
 
             menu.setVisible(false);
             // Avanza en la UI
