@@ -21,9 +21,10 @@ public class ChatMenuControler {
 
     public ChatMenuControler(MenuChats menu) {
         model = new ArrayList<>();
-        model.add("Dfranco");
-        model.add("William");
-        model.add("Andres");
+//        model.add("Dfranco");
+//        model.add("William");
+//        model.add("Andres");
+        System.out.println("construyendo el controlador del menu de chats");
         facade = Facade.getInstance();
         this.menu = menu;
         menu.getModel().addAll(model);
