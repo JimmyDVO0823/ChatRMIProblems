@@ -29,7 +29,7 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
     @Override
     public synchronized void registerClient(ClientCallBack cb, String username) {
         clients.put(username, cb);
-        System.out.println("Cliente '" + username + "' registrado");
+        //System.out.println("Cliente '" + username + "' registrado");
         usersList.add(username);
         try {
             updateList();
@@ -82,11 +82,10 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
      * de Strings con los nombres de cada uno
      */
     private void updateList() throws RemoteException {
-        System.out.println("se intenta actualizar los clientes");
+        //System.out.println("se intenta actualizar los clientes");
         for (Map.Entry<String, ClientCallBack> entry : clients.entrySet()) {
             ClientCallBack callback = entry.getValue();
             callback.reciveConectedUsers(usersList);
-            //callback.updateList();
         }
     }
 

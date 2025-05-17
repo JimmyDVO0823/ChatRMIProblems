@@ -35,8 +35,8 @@ public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCal
 
     @Override
     public void reciveConectedUsers(ArrayList<String> users) throws RemoteException {
-        System.out.println("se recibir la lista de usuarios en el callback");
-        System.out.println(users);
+        //System.out.println("se recibir la lista de usuarios en el callback");
+        //System.out.println(users);
         facade.updateConectedUsers(users);
     }
 }

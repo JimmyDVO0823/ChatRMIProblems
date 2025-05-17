@@ -21,9 +21,6 @@ public class ChatMenuControler implements ISubscriber{
 
     public ChatMenuControler(MenuChats menu) {
         model = new ArrayList<>();
-//        model.add("Dfranco");
-//        model.add("William");
-//        model.add("Andres");
         System.out.println("construyendo el controlador del menu de chats");
         facade = Facade.getInstance();
         facade.subscribe(this);

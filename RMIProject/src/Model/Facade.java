@@ -39,8 +39,8 @@ public class Facade {
 
     public void registerClient(ClientCallBack callBack,String username) throws RemoteException {
         try {
-            server.registerClient(callBack,username); //Manda a registrar el callback
             setUsername(username); //El usuario solo va a tener un username, entonces lo guardamos en la fachada
+            server.registerClient(callBack,username); //Manda a registrar el callback
         } catch (RemoteException e) {
             JOptionPane.showMessageDialog(null, "Error al registrar el Cliente");
             throw new RuntimeException(e);
@@ -64,6 +64,7 @@ public class Facade {
     }
 
     public void updateConectedUsers(ArrayList<String> users){
+        System.out.println("El nombre de usuario en la fachada es: " + username );
         users.remove(username);
         System.out.println("lista de usuarios sin el usuario propio:");
         System.out.println(users);
