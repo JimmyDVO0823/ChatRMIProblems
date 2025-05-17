@@ -14,7 +14,7 @@ import java.util.ArrayList;
  *
  * @author LENOVO LOQ
  */
-public class ChatMenuControler {
+public class ChatMenuControler implements ISubscriber{
     private Facade facade;
     private MenuChats menu;
     ArrayList<String> model;
@@ -26,6 +26,7 @@ public class ChatMenuControler {
 //        model.add("Andres");
         System.out.println("construyendo el controlador del menu de chats");
         facade = Facade.getInstance();
+        facade.subscribe(this);
         this.menu = menu;
         menu.getModel().addAll(model);
     }
@@ -59,4 +60,8 @@ public class ChatMenuControler {
         System.out.println("Destinatario: " + reciver);
     }
 
+    @Override
+    public void reciveNotification(String notification) {
+        System.out.println("Controlador de menu de chats suscrito");
+    }
 }

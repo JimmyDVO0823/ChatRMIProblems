@@ -12,7 +12,7 @@ import javax.swing.*;
  *
  * @author LENOVO LOQ
  */
-public class MenuChats extends javax.swing.JFrame {
+public class MenuChats extends javax.swing.JFrame  {
     private DefaultListModel model;
     ChatMenuControler controler;
     /**

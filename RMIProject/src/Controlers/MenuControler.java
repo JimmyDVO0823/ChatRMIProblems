@@ -39,12 +39,11 @@ public class MenuControler {
 
             // Registro del callback, que es el objeto remoto que utiliza el servidor para hacer referencia al usuario
             ClientCallbackImpl cb = ClientCallbackImpl.getInstance();
+            new MenuChats().setVisible(true);
             facade.registerClient(cb, username); //La fachada maneja la logica del servidor
 
-            // Avanza en la UI
             menu.setVisible(false);
-            new MenuChats().setVisible(true);
-
+            // Avanza en la UI
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al conectar con el servidor");

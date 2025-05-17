@@ -69,6 +69,7 @@ public class Facade {
         System.out.println(users);
         for (ISubscriber subscriber : subscribers) {
             if (subscriber instanceof ChatMenuControler) {
+                System.out.println("se encontró el controlador");
                 ((ChatMenuControler) subscriber).updateConectedUsers(users);
             }
         }
