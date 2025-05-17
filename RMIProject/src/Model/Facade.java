@@ -36,8 +36,8 @@ public class Facade {
 
     public void registerClient(ClientCallBack callBack,String username) throws RemoteException {
         try {
-            server.registerClient(callBack,username);
-            setUsername(username);
+            server.registerClient(callBack,username); //Manda a registrar el callback
+            setUsername(username); //El usuario solo va a tener un username, entonces lo guardamos en la fachada
         } catch (RemoteException e) {
             JOptionPane.showMessageDialog(null, "Error al registrar el Cliente");
             throw new RuntimeException(e);
