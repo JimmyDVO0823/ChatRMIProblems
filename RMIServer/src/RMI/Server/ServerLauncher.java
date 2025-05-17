@@ -9,33 +9,36 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import Model.ClientCallBack;
+import java.net.UnknownHostException;
+import java.rmi.AlreadyBoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class ServerLauncher  {
-
+public class ServerLauncher {
 
     public ServerLauncher() throws RemoteException {
-        super();
     }
 
     public static void main(String[] args) throws Exception {
-        // 1. Obtener IP local y fijar el hostname RMI
-        String ip = InetAddress.getLocalHost().getHostAddress();
-        System.out.println("Servidor IP: " + ip);
-        System.setProperty("java.rmi.server.hostname", ip);
+        IServer remoteObj = new ServerImpl();
+        runServer(remoteObj);
 
-//        // 2. (Opcional) configurar Security Manager si se necesitan políticas
-//        if (System.getSecurityManager() == null) {
-//            System.setSecurityManager(new SecurityManager());
-//        }
+    }
 
-        // 3. Crear el registro RMI en el puerto 3232
-        Registry registry = LocateRegistry.createRegistry(3232); // (fixed port):contentReference[oaicite:1]{index=1}
+    public static void runServer(IServer server) throws RemoteException, AlreadyBoundException {
+        int port = 3232;
+        String ip = null;
 
-        // 4. Instanciar e exportar el objeto remoto (ej. ServerImpl implementa IServer)
-        IServer remoteObj = new ServerImpl(); // debe implementar java.rmi.Remote e IServer
-        registry.rebind("srv", remoteObj);
-
+        try {
+            ip = InetAddress.getLocalHost().toString();
+            Registry registry = LocateRegistry.createRegistry(3232); // (fixed port):contentReference[oaicite:1]{index=1}
+            registry.bind("SERVER", server);
+        } catch (UnknownHostException ex) {
+            Logger.getLogger(ServerLauncher.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println("Servidor IP: " + ip + "Port :" + port);
         System.out.println("Servidor RMI listo en " + ip + ":3232");
+
     }
 
 }
