@@ -22,7 +22,6 @@ public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCal
 
     @Override
     public void receiveMessage(String from, String message) {
-        //System.out.println("MENSAJEEEEEEEEEEEEEEEEEEE");
         System.out.println(from + ": " + message);
         String messageNotify = from + ": " + message;
         facade.notifyPrivate(messageNotify);

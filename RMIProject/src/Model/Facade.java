@@ -64,13 +64,9 @@ public class Facade {
     }
 
     public void updateConectedUsers(ArrayList<String> users){
-        System.out.println("El nombre de usuario en la fachada es: " + username );
         users.remove(username);
-        System.out.println("lista de usuarios sin el usuario propio:");
-        System.out.println(users);
         for (ISubscriber subscriber : subscribers) {
             if (subscriber instanceof ChatMenuControler) {
-                System.out.println("se encontró el controlador");
                 ((ChatMenuControler) subscriber).updateConectedUsers(users);
             }
         }

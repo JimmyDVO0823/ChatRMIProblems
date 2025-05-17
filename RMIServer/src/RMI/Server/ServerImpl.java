@@ -12,10 +12,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ServerImpl extends UnicastRemoteObject implements IServer {
     private final Map<String, ClientCallBack> clients = new ConcurrentHashMap<>();
     private ArrayList<String> usersList;
+    ActiveUsersThread activeUsersThread;
 
     public ServerImpl() throws RemoteException {
         super();  // Exporta el objeto
         usersList = new ArrayList<>();
+        activeUsersThread = new ActiveUsersThread(this);
     }
 
     /**
@@ -29,6 +31,9 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
     @Override
     public synchronized void registerClient(ClientCallBack cb, String username) {
         clients.put(username, cb);
+        if (clients.size() == 1) {
+            activeUsersThread.start();
+        }
         //System.out.println("Cliente '" + username + "' registrado");
         usersList.add(username);
         try {
@@ -82,14 +87,33 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
      * de Strings con los nombres de cada uno
      */
     private void updateList() throws RemoteException {
-        //System.out.println("se intenta actualizar los clientes");
+        //System.out.println("lista de clientes:");
         for (Map.Entry<String, ClientCallBack> entry : clients.entrySet()) {
             ClientCallBack callback = entry.getValue();
+            //System.out.println(entry.getKey());
             callback.reciveConectedUsers(usersList);
         }
+        //System.out.println("-----------------------");
     }
 
-    private void updateList2(ClientCallBack cb) {
-
+    public void runList() {
+        ClientCallBack clientCallBackToDelete = null;
+        String usernameToDelete = "";
+        try {
+            for (Map.Entry<String, ClientCallBack> entry : clients.entrySet()) {
+                usernameToDelete = entry.getKey();
+                clientCallBackToDelete = entry.getValue();
+                clientCallBackToDelete.receiveMessage("A","b");
+            }
+        } catch (Exception e) {
+            //System.out.println("El usuario que se va a intentar eliminar es: " + usernameToDelete);
+            usersList.remove(usernameToDelete);
+            clients.remove(usernameToDelete);
+            try {
+                updateList();
+            } catch (RemoteException ex) {
+                System.out.println("EXCEPCION AL ACTUALIZAR LA LISTA");
+            }
+        }
     }
 }

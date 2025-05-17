@@ -30,6 +30,7 @@ public class ChatMenuControler implements ISubscriber{
 
     public void updateConectedUsers(ArrayList<String> users){
         System.out.println("se intenta actualizar");
+        menu.getModel().clear();
         menu.getModel().addAll(users);
     }
 
