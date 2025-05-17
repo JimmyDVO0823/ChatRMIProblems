@@ -2,6 +2,7 @@ package Model;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCallBack {
     //Uso de singleton, pues solo vamos a tener un usuario (nosotros mismos)
@@ -30,5 +31,10 @@ public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCal
     @Override
     public void sendMessage(String to, String message) throws RemoteException {
 
+    }
+
+    @Override
+    public void reciveConectedUsers(ArrayList<String> users) throws RemoteException {
+        facade.updateConectedUsers(users);
     }
 }

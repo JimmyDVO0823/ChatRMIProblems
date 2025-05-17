@@ -2,6 +2,7 @@ package Model;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 public interface ClientCallBack extends Remote {
     /**
@@ -12,4 +13,5 @@ public interface ClientCallBack extends Remote {
      */
     void receiveMessage(String from, String message) throws RemoteException;
     void sendMessage(String to, String message) throws RemoteException;
+    void reciveConectedUsers(ArrayList<String> users) throws RemoteException;
 }

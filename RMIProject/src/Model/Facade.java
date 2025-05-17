@@ -1,14 +1,16 @@
 package Model;
 
+import Controlers.ChatMenuControler;
 import Controlers.ISubscriber;
 import Interface.IServer;
 
 import javax.swing.*;
 import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
+import java.util.ArrayList;
 
 public class Facade {
-    ISubscriber subscriber;
+    private ArrayList<ISubscriber> subscribers;
     private IServer server;
     private Registry reg;
     private String username;
@@ -16,6 +18,7 @@ public class Facade {
     private static Facade instance;
 
     private Facade() {
+        subscribers = new ArrayList<>();
     }
 
     public static Facade getInstance() {
@@ -50,11 +53,24 @@ public class Facade {
     }
 
     public void notifyPrivate(String message){
-        subscriber.reciveNotification(message);
+        for (int i = 0; i < subscribers.size(); i++) {
+            ISubscriber subscriber = subscribers.get(i);
+            subscriber.reciveNotification(message);
+        }
     }
 
     public void subscribe(ISubscriber subscriber){
-        this.subscriber = subscriber;
+        subscribers.add(subscriber);
+    }
+
+    public void updateConectedUsers(ArrayList<String> users){
+        users.remove(username);
+        for (int i = 0; i < subscribers.size(); i++) {
+            ISubscriber subscriber = subscribers.get(i);
+            if (subscriber instanceof ChatMenuControler){
+                ((ChatMenuControler) subscriber).updateConectedUsers(users);
+            }
+        }
     }
 
     //GETTERS SETTERS

@@ -3,6 +3,8 @@ package Controlers;
 import GUIRMI.PrivateChatGUI;
 import Model.Facade;
 
+import java.util.ArrayList;
+
 public class PrivateChatControler implements ISubscriber {
     private PrivateChatGUI view;
     Facade facade;

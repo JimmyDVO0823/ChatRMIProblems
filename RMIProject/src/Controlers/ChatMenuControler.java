@@ -29,6 +29,10 @@ public class ChatMenuControler {
         menu.getModel().addAll(model);
     }
 
+    public void updateConectedUsers(ArrayList<String> users){
+        menu.getModel().addAll(users);
+    }
+
     public void startPrivateChat(){
         String reciver = menu.getLstConectedUsers().getSelectedValue();
         PrivateChatGUI privateChatGUI = PrivateChatGUI.getInstance();
