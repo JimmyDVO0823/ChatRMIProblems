@@ -101,11 +101,7 @@ public class MenuChats extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lstConectedUsers.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "DFranco", "William", "Andres" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        lstConectedUsers.setModel(model);
         jScrollPane1.setViewportView(lstConectedUsers);
 
         jLabel1.setText("Lista de Usuarios Conectados");
