@@ -20,7 +20,8 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
 
     /**
      * Método para registrar un cliente, es decir, añadirlo a la lista de clientes
-     * que maneja el servidor para poder tener acceso futuro
+     * que maneja el servidor para poder tener acceso futuro. este método tambien
+     * añade el username a la lista de nombres para los usuarios conectados y llama updateList()
      * @param cb Objeto remoto que representa al cliente
      * @param username la clave para guardar el objeto remoto
      */
@@ -70,14 +71,10 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
 
     //MÉTODOS
 
-    public void runList(){
-        for (Map.Entry<String, ClientCallBack> entry : clients.entrySet()) {
-            String key = entry.getKey();
-            ClientCallBack callback = entry.getValue();
-            System.out.println("1)" + key + ": " + callback);
-        }
-    }
-    
+    /**
+     * Manda a actualizar la lista de cada usuario por separado, enviandole la lista
+     * de Strings con los nombres de cada uno
+     */
     private void updateList(){
         for (Map.Entry<String, ClientCallBack> entry : clients.entrySet()) {
             ClientCallBack callback = entry.getValue();
