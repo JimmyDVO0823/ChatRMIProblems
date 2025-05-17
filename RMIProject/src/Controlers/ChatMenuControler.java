@@ -30,6 +30,7 @@ public class ChatMenuControler {
     }
 
     public void updateConectedUsers(ArrayList<String> users){
+        System.out.println("se intenta actualizar");
         menu.getModel().addAll(users);
     }
 

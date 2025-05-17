@@ -22,7 +22,8 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
      * Método para registrar un cliente, es decir, añadirlo a la lista de clientes
      * que maneja el servidor para poder tener acceso futuro. este método tambien
      * añade el username a la lista de nombres para los usuarios conectados y llama updateList()
-     * @param cb Objeto remoto que representa al cliente
+     *
+     * @param cb       Objeto remoto que representa al cliente
      * @param username la clave para guardar el objeto remoto
      */
     @Override
@@ -30,19 +31,23 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
         clients.put(username, cb);
         System.out.println("Cliente '" + username + "' registrado");
         usersList.add(username);
-        updateList();
+        try {
+            updateList();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * Envia mensaje directo (privado) de un usuario a otro
+     *
      * @param from remitente
-     * @param to destinatario
-     * @param msg mensaje a enviar
+     * @param to   destinatario
+     * @param msg  mensaje a enviar
      * @throws RemoteException
      */
     @Override
-    public synchronized void sendDirectMessage(String from, String to, String msg)
-            throws RemoteException {
+    public synchronized void sendDirectMessage(String from, String to, String msg) throws RemoteException {
         ClientCallBack target = clients.get(to);
         if (target != null) {
             try {
@@ -58,6 +63,7 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
 
     /**
      * Le da la bienvenida al usuario cuando entra
+     *
      * @param nombre nombre del usuario
      * @return retorna el saludo al usuario
      * @throws RemoteException
@@ -75,14 +81,16 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
      * Manda a actualizar la lista de cada usuario por separado, enviandole la lista
      * de Strings con los nombres de cada uno
      */
-    private void updateList(){
+    private void updateList() throws RemoteException {
+        System.out.println("se intenta actualizar los clientes");
         for (Map.Entry<String, ClientCallBack> entry : clients.entrySet()) {
             ClientCallBack callback = entry.getValue();
+            callback.reciveConectedUsers(usersList);
             //callback.updateList();
         }
     }
 
-    private void updateList2(ClientCallBack cb){
+    private void updateList2(ClientCallBack cb) {
 
     }
 }
