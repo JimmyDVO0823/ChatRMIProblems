@@ -26,7 +26,7 @@ public class PrivateChatControler implements ISubscriber {
     public void sendMessage() {
         String space = "";
         String message = view.getTxtMessagePrivateArea().getText();
-        if (view.getTxtHistory().getText().equals("")) space = "\n";
+        if (!view.getTxtHistory().getText().equals("")) space = "\n";
         view.getTxtHistory().append(space + message);
         facade.sendDirectMessage(message);
     }
