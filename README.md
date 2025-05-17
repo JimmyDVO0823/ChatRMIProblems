@@ -7,14 +7,8 @@ Todas las aclaraciones que tengan que decir, háganlas acá 👍
 	Se va a manejar con ConcurrentHashMap, pero queda abierto a debate
 
 
-Flujo de trabajo
+Trabajos por hacer
 
-	1)Hacer la GUI del menú funcional 👍
-
-	1.1)Manejar sus excepciones👍
-
-	1.2)Probar con otros dispositivos
-
-	2)Hacer la GUI de mensajes privados funcional
-
-	3)Hacer la GUI de mensajes publicos funcional
+	Hacer que salgan los mensajes propios en la GUI de chat privado
+	Hacer que se actualice la lista al cerrar un cliente la aplicación
+	TODO lo de chat publico
