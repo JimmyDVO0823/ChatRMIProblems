@@ -24,18 +24,18 @@ public class PrivateChatControler implements ISubscriber {
     }
 
     public void sendMessage() {
-        String space = "";
+        String space = "\n";
         String message = view.getTxtMessagePrivateArea().getText();
-        if (!view.getTxtHistory().getText().equals("")) space = "\n";
+        if (view.getTxtHistory().getText().isEmpty()) space = "";
         view.getTxtHistory().append(space + message);
-        facade.sendDirectMessage(message);
+        facade.sendDirectMessage("Tu: " + message);
     }
 
 
     @Override
     public void reciveNotification(String notification) {
-        String space = "";
-        if (!view.getTxtHistory().getText().equals(""))space = "\n";
+        String space = "\n";
+        if (view.getTxtHistory().getText().isEmpty())space = "";
         view.getTxtHistory().append(space + notification);
     }
 }
