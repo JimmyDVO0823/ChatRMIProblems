@@ -93,6 +93,8 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
             //System.out.println(entry.getKey());
             callback.reciveConectedUsers(usersList);
         }
+        System.out.println("Lista de Usuarios:");
+        System.out.println(usersList);
         //System.out.println("-----------------------");
     }
 
@@ -106,7 +108,7 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
                 clientCallBackToDelete.ping();
             }
         } catch (Exception e) {
-            //System.out.println("El usuario que se va a intentar eliminar es: " + usernameToDelete);
+            System.out.println("usuario eliminandose...");
             usersList.remove(usernameToDelete);
             clients.remove(usernameToDelete);
             try {
