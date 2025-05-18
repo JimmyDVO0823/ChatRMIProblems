@@ -38,4 +38,9 @@ public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCal
         //System.out.println(users);
         facade.updateConectedUsers(users);
     }
+
+    @Override
+    public void ping() throws RemoteException {
+
+    }
 }

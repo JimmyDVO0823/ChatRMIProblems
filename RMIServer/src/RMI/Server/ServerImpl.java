@@ -103,7 +103,7 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
             for (Map.Entry<String, ClientCallBack> entry : clients.entrySet()) {
                 usernameToDelete = entry.getKey();
                 clientCallBackToDelete = entry.getValue();
-                clientCallBackToDelete.receiveMessage("A","b");
+                clientCallBackToDelete.ping();
             }
         } catch (Exception e) {
             //System.out.println("El usuario que se va a intentar eliminar es: " + usernameToDelete);
