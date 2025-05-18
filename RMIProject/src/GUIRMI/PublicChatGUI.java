@@ -20,6 +20,7 @@ public class PublicChatGUI extends javax.swing.JFrame {
     public PublicChatGUI() {
         controler = new PublicChatControler(this);
         initComponents();
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     /**
