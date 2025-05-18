@@ -60,7 +60,7 @@ public class ChatMenuControler implements ISubscriber{
     }
 
     public void startPublicChat(){
-        PublicChatGUI publicChatGUI = new PublicChatGUI();
+        PublicChatGUI publicChatGUI = PublicChatGUI.getInstance();
         publicChatGUI.setVisible(true);
     }
 

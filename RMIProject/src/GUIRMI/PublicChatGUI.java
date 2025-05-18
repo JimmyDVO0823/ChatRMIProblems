@@ -14,13 +14,21 @@ import javax.swing.*;
  */
 public class PublicChatGUI extends javax.swing.JFrame {
     private PublicChatControler controler;
+    private static PublicChatGUI instance;
     /**
      * Creates new form GUIPublico
      */
-    public PublicChatGUI() {
+    private PublicChatGUI() {
         controler = new PublicChatControler(this);
         initComponents();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }
+
+    public static PublicChatGUI getInstance() {
+        if (instance == null) {
+            instance = new PublicChatGUI();
+        }
+        return instance;
     }
 
     /**
