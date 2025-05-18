@@ -46,6 +46,6 @@ public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCal
 
     @Override
     public void recivePublicMessage(String from, String message) throws RemoteException {
-
+        facade.notifyPublicMessage(from,message);
     }
 }

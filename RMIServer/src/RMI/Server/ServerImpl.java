@@ -83,8 +83,11 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
     @Override
     public void sendPublicMessage(String sender, String message) throws RemoteException {
         for (Map.Entry<String, ClientCallBack> entry : clients.entrySet()) {
-            if (entry.getKey().equals(sender)) continue;
             ClientCallBack callback = entry.getValue();
+            if (entry.getKey().equals(sender)) {
+                callback.recivePublicMessage("Tu",message);
+                continue;
+            }
             //System.out.println(entry.getKey());
             callback.recivePublicMessage(sender, message);
         }

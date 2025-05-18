@@ -6,6 +6,7 @@ package Controlers;
 
 import GUIRMI.MenuChats;
 import GUIRMI.PrivateChatGUI;
+import GUIRMI.PublicChatGUI;
 import Model.Facade;
 
 import java.util.ArrayList;
@@ -58,8 +59,14 @@ public class ChatMenuControler implements ISubscriber{
         System.out.println("Destinatario: " + reciver);
     }
 
+    public void startPublicChat(){
+        PublicChatGUI publicChatGUI = new PublicChatGUI();
+        publicChatGUI.setVisible(true);
+    }
+
     @Override
     public void reciveNotification(String notification) {
+
         System.out.println("Controlador de menu de chats suscrito");
     }
 }

@@ -2,7 +2,10 @@ package Model;
 
 import Controlers.ChatMenuControler;
 import Controlers.ISubscriber;
+import Controlers.PublicChatControler;
 import Interface.IServer;
+import Model.MessageSenders.PrivateMessagesThread;
+import Model.MessageSenders.PublicMessagesThread;
 
 import javax.swing.*;
 import java.rmi.RemoteException;
@@ -48,8 +51,21 @@ public class Facade {
     }
 
     public void sendDirectMessage(String message) {
-        MessagesThread thread = new MessagesThread(username,reciver,message,server);
+        PrivateMessagesThread thread = new PrivateMessagesThread(username,reciver,message,server);
         thread.start();
+    }
+
+    public void sendPublicMessage(String message) {
+        PublicMessagesThread thread = new PublicMessagesThread(message,username,server);
+        thread.start();
+    }
+
+    public void notifyPublicMessage(String from,String message) {
+        for (ISubscriber subscriber : subscribers) {
+            if (subscriber instanceof PublicChatControler) {
+                 subscriber.reciveNotification(message);
+            }
+        }
     }
 
     public void notifyPrivate(String message){

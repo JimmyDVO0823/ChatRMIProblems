@@ -1,17 +1,17 @@
-package Model;
+package Model.MessageSenders;
 
 import Interface.IServer;
 
 import javax.swing.*;
 import java.rmi.RemoteException;
 
-public class MessagesThread extends Thread {
+public class PrivateMessagesThread extends Thread {
     private String from;
     private String to;
     private String message;
     private IServer server;
 
-    public MessagesThread(String from, String to, String message, IServer server) {
+    public PrivateMessagesThread(String from, String to, String message, IServer server) {
         this.from = from;
         this.to = to;
         this.message = message;

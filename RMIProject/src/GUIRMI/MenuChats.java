@@ -182,6 +182,7 @@ public class MenuChats extends javax.swing.JFrame  {
 
     private void cmdStartPublicChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdStartPublicChatActionPerformed
         // TODO add your handling code here:
+        controler.startPublicChat();
     }//GEN-LAST:event_cmdStartPublicChatActionPerformed
 
     /**
