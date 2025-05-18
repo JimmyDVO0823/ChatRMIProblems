@@ -99,6 +99,7 @@ public class PublicChatGUI extends javax.swing.JFrame {
 
     private void cmdSendMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSendMessageActionPerformed
         // TODO add your handling code here:
+        controler.sendMessage();
     }//GEN-LAST:event_cmdSendMessageActionPerformed
 
     /**
