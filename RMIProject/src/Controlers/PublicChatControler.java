@@ -22,4 +22,10 @@ public class PublicChatControler implements ISubscriber{
     public void reciveNotification(String notification) {
         view.getTxtMessagesHistory().setText(notification);
     }
+
+    public void recivePublicMessage(String from,String message){
+        String space = "\n";
+        if (view.getTxtMessagesHistory().getText().equals("")) space = "";
+        view.getTxtMessagesHistory().append(space + from+": "+message);
+    }
 }

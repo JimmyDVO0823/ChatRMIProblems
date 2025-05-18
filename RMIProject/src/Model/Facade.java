@@ -63,7 +63,7 @@ public class Facade {
     public void notifyPublicMessage(String from,String message) {
         for (ISubscriber subscriber : subscribers) {
             if (subscriber instanceof PublicChatControler) {
-                 subscriber.reciveNotification(message);
+                 ((PublicChatControler) subscriber).recivePublicMessage(from,message);
             }
         }
     }
