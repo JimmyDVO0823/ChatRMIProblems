@@ -43,4 +43,9 @@ public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCal
     public void ping() throws RemoteException {
         System.out.println("ping");
     }
+
+    @Override
+    public void recivePublicMessage(String from, String message) throws RemoteException {
+
+    }
 }

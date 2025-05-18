@@ -12,7 +12,7 @@ import Model.ClientCallBack;
  */
 public interface IServer extends Remote{
     public String darBienvenida(String nombre)throws RemoteException;
-    //public void sendMessage(String mensaje,String sender,String recipent)throws RemoteException;
+    public void sendPublicMessage(String sender,String message)throws RemoteException;
     void registerClient(ClientCallBack cb, String username) throws RemoteException;
     void sendDirectMessage(String from, String to, String msg) throws RemoteException;
 

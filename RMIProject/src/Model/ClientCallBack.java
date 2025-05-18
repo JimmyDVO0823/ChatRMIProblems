@@ -15,4 +15,5 @@ public interface ClientCallBack extends Remote {
     void sendMessage(String to, String message) throws RemoteException;
     void reciveConectedUsers(ArrayList<String> users) throws RemoteException;
     void ping() throws RemoteException;
+    void recivePublicMessage(String from, String message) throws RemoteException;
 }
