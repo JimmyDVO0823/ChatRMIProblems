@@ -43,86 +43,88 @@ public class PrivateChatGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        background = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtHistory = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        cmdSendMessage = new javax.swing.JButton();
-        cmdBackChatsMenu = new javax.swing.JButton();
         lblUser = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtMessagePrivateArea = new javax.swing.JTextArea();
+        cmdSendMessage = new javax.swing.JButton();
+        cmdBackChatsMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        background.setBackground(new java.awt.Color(255, 255, 255));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtHistory.setBackground(new java.awt.Color(255, 255, 255));
         txtHistory.setColumns(20);
+        txtHistory.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtHistory.setForeground(new java.awt.Color(0, 0, 0));
         txtHistory.setRows(5);
         jScrollPane1.setViewportView(txtHistory);
 
-        jLabel1.setText("Historial Privado");
+        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 580, 370));
 
-        cmdSendMessage.setText("Enviar Mensaje");
+        jLabel1.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Historial Privado");
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
+
+        lblUser.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        lblUser.setForeground(new java.awt.Color(0, 0, 0));
+        lblUser.setText("Usuario");
+        background.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtMessagePrivateArea.setBackground(new java.awt.Color(255, 255, 255));
+        txtMessagePrivateArea.setColumns(20);
+        txtMessagePrivateArea.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtMessagePrivateArea.setForeground(new java.awt.Color(0, 0, 0));
+        txtMessagePrivateArea.setRows(5);
+        jScrollPane2.setViewportView(txtMessagePrivateArea);
+
+        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 580, -1));
+
+        cmdSendMessage.setBackground(new java.awt.Color(255, 255, 255));
+        cmdSendMessage.setForeground(new java.awt.Color(0, 0, 0));
+        cmdSendMessage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIRMI/Images/SendMessageIcon.png"))); // NOI18N
+        cmdSendMessage.setBorder(null);
         cmdSendMessage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdSendMessageActionPerformed(evt);
             }
         });
+        background.add(cmdSendMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 480, 30, 30));
 
+        cmdBackChatsMenu.setBackground(new java.awt.Color(0, 153, 255));
+        cmdBackChatsMenu.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        cmdBackChatsMenu.setForeground(new java.awt.Color(0, 0, 0));
         cmdBackChatsMenu.setText("Reg al Menu");
+        cmdBackChatsMenu.setBorder(null);
         cmdBackChatsMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdBackChatsMenuActionPerformed(evt);
             }
         });
-
-        lblUser.setText("Usuario");
-
-        txtMessagePrivateArea.setColumns(20);
-        txtMessagePrivateArea.setRows(5);
-        jScrollPane2.setViewportView(txtMessagePrivateArea);
+        background.add(cmdBackChatsMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 100, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jLabel1)
-                .addGap(213, 213, 213)
-                .addComponent(lblUser)
-                .addGap(79, 79, 79))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cmdBackChatsMenu)
-                            .addComponent(cmdSendMessage))
-                        .addGap(55, 55, 55))))
+                .addGap(0, 0, 0)
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(lblUser))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(cmdSendMessage)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cmdBackChatsMenu)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -204,6 +206,7 @@ public class PrivateChatGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel background;
     private javax.swing.JButton cmdBackChatsMenu;
     private javax.swing.JButton cmdSendMessage;
     private javax.swing.JLabel jLabel1;
