@@ -4,7 +4,10 @@
  */
 package GUIRMI;
 
+import org.netbeans.lib.awtextra.AbsoluteConstraints;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
 import Controlers.MenuControler;
+import java.awt.Color;
 
 import javax.swing.*;
 
@@ -31,116 +34,170 @@ public class MenuGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        txtUsernameMenu = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtServerIPMenu = new javax.swing.JTextField();
-        cmdConect = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        background = new javax.swing.JPanel();
         txtServerNameMenu = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        txtUsernameMenu = new javax.swing.JTextField();
         txtPort = new javax.swing.JTextField();
+        txtServerIPMenu = new javax.swing.JTextField();
+        lblServerName = new javax.swing.JLabel();
+        lblIP = new javax.swing.JLabel();
+        lblPort = new javax.swing.JLabel();
+        lbluserName = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        imgLogo = new javax.swing.JLabel();
+        imgBackground = new javax.swing.JLabel();
+        lblLogInServer = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        cmdConect = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("LogIn");
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setResizable(false);
+        setSize(new java.awt.Dimension(800, 500));
 
-        jLabel1.setText("Username");
+        background.setBackground(new java.awt.Color(255, 255, 255));
+        background.setForeground(new java.awt.Color(60, 63, 65));
+        background.setMaximumSize(new java.awt.Dimension(800, 500));
+        background.setMinimumSize(new java.awt.Dimension(800, 500));
+        background.setName(""); // NOI18N
+        background.setPreferredSize(new java.awt.Dimension(800, 500));
+        background.setRequestFocusEnabled(false);
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtUsernameMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsernameMenuActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("Port");
-
-        txtServerIPMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtServerIPMenuActionPerformed(evt);
-            }
-        });
-
-        cmdConect.setText("Conectar");
-        cmdConect.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdConectActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Server Name");
-
+        txtServerNameMenu.setBackground(new java.awt.Color(255, 255, 255));
+        txtServerNameMenu.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtServerNameMenu.setForeground(new java.awt.Color(0, 0, 0));
+        txtServerNameMenu.setToolTipText("Ingresar Usuario");
+        txtServerNameMenu.setBorder(null);
         txtServerNameMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtServerNameMenuActionPerformed(evt);
             }
         });
+        background.add(txtServerNameMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 250, 20));
 
-        jLabel4.setText("Server IP");
+        txtUsernameMenu.setBackground(new java.awt.Color(255, 255, 255));
+        txtUsernameMenu.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtUsernameMenu.setForeground(new java.awt.Color(0, 0, 0));
+        txtUsernameMenu.setToolTipText("Ingresar Usuario");
+        txtUsernameMenu.setBorder(null);
+        txtUsernameMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameMenuActionPerformed(evt);
+            }
+        });
+        background.add(txtUsernameMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 250, 20));
 
+        txtPort.setBackground(new java.awt.Color(255, 255, 255));
+        txtPort.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtPort.setForeground(new java.awt.Color(0, 0, 0));
+        txtPort.setToolTipText("Ingresar Usuario");
+        txtPort.setBorder(null);
         txtPort.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPortActionPerformed(evt);
             }
         });
+        background.add(txtPort, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 250, 20));
+
+        txtServerIPMenu.setBackground(new java.awt.Color(255, 255, 255));
+        txtServerIPMenu.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtServerIPMenu.setForeground(new java.awt.Color(0, 0, 0));
+        txtServerIPMenu.setToolTipText("Ingresar Usuario");
+        txtServerIPMenu.setBorder(null);
+        txtServerIPMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtServerIPMenuActionPerformed(evt);
+            }
+        });
+        background.add(txtServerIPMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 250, 20));
+
+        lblServerName.setBackground(new java.awt.Color(255, 255, 255));
+        lblServerName.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblServerName.setForeground(new java.awt.Color(0, 0, 0));
+        lblServerName.setText("Server Name");
+        background.add(lblServerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+
+        lblIP.setBackground(new java.awt.Color(255, 255, 255));
+        lblIP.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblIP.setForeground(new java.awt.Color(0, 0, 0));
+        lblIP.setText("Server IP");
+        background.add(lblIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
+
+        lblPort.setBackground(new java.awt.Color(255, 255, 255));
+        lblPort.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblPort.setForeground(new java.awt.Color(0, 0, 0));
+        lblPort.setText("Port");
+        background.add(lblPort, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
+
+        lbluserName.setBackground(new java.awt.Color(255, 255, 255));
+        lbluserName.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lbluserName.setForeground(new java.awt.Color(0, 0, 0));
+        lbluserName.setText("Username");
+        background.add(lbluserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Roboto ExtraBold", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("UFPS CHAT");
+        jLabel1.setToolTipText("");
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(509, 260, 290, -1));
+
+        imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIRMI/Images/logo.png"))); // NOI18N
+        background.add(imgLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 290, 150));
+
+        imgBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIRMI/Images/city.png"))); // NOI18N
+        imgBackground.setMaximumSize(new java.awt.Dimension(800, 800));
+        imgBackground.setMinimumSize(new java.awt.Dimension(800, 800));
+        imgBackground.setPreferredSize(new java.awt.Dimension(800, 500));
+        background.add(imgBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 300, -1));
+
+        lblLogInServer.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        lblLogInServer.setForeground(new java.awt.Color(0, 0, 0));
+        lblLogInServer.setText("LOG IN");
+        background.add(lblLogInServer, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIRMI/Images/favicon.png"))); // NOI18N
+        jLabel2.setText("RMI CHAT");
+        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 150, 40));
+        background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 210, -1));
+        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 210, -1));
+        background.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 210, -1));
+        background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 210, -1));
+
+        cmdConect.setBackground(new java.awt.Color(51, 153, 255));
+        cmdConect.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        cmdConect.setForeground(new java.awt.Color(0, 0, 0));
+        cmdConect.setText("CONECT");
+        cmdConect.setBorder(null);
+        cmdConect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdConectActionPerformed(evt);
+            }
+        });
+        background.add(cmdConect, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 100, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(122, 122, 122))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(136, 136, 136))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtServerNameMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(140, 140, 140)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(80, 80, 80)
-                            .addComponent(txtUsernameMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtPort, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtServerIPMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
-                .addContainerGap(80, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(cmdConect)
-                        .addGap(119, 119, 119))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(145, 145, 145))))
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUsernameMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jLabel3)
-                .addGap(12, 12, 12)
-                .addComponent(txtServerNameMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(txtServerIPMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtPort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(cmdConect)
-                .addGap(54, 54, 54))
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,13 +259,13 @@ public class MenuGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtServerNameMenuActionPerformed
 
-    private void txtServerIPMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtServerIPMenuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtServerIPMenuActionPerformed
-
     private void txtPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPortActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPortActionPerformed
+
+    private void txtServerIPMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtServerIPMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtServerIPMenuActionPerformed
 
     
     /**
@@ -250,11 +307,21 @@ public class MenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel background;
     private javax.swing.JButton cmdConect;
+    private javax.swing.JLabel imgBackground;
+    private javax.swing.JLabel imgLogo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JLabel lblIP;
+    private javax.swing.JLabel lblLogInServer;
+    private javax.swing.JLabel lblPort;
+    private javax.swing.JLabel lblServerName;
+    private javax.swing.JLabel lbluserName;
     private javax.swing.JTextField txtPort;
     private javax.swing.JTextField txtServerIPMenu;
     private javax.swing.JTextField txtServerNameMenu;
