@@ -180,6 +180,7 @@ public class MenuGUI extends javax.swing.JFrame {
         cmdConect.setForeground(new java.awt.Color(0, 0, 0));
         cmdConect.setText("CONECT");
         cmdConect.setBorder(null);
+        cmdConect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cmdConect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdConectActionPerformed(evt);

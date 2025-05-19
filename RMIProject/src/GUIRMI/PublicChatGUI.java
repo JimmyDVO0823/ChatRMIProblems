@@ -54,7 +54,9 @@ public class PublicChatGUI extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        cmdSendMessage.setBackground(new java.awt.Color(255, 255, 255));
         cmdSendMessage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIRMI/Images/SendMessageIcon.png"))); // NOI18N
+        cmdSendMessage.setBorder(null);
         cmdSendMessage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cmdSendMessage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

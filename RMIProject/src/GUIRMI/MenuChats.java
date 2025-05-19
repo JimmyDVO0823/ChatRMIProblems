@@ -64,6 +64,7 @@ public class MenuChats extends javax.swing.JFrame  {
         cmdStartPrivateChat.setText("Chat Privado");
         cmdStartPrivateChat.setBorder(null);
         cmdStartPrivateChat.setBorderPainted(false);
+        cmdStartPrivateChat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cmdStartPrivateChat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdStartPrivateChatActionPerformed(evt);
@@ -77,6 +78,7 @@ public class MenuChats extends javax.swing.JFrame  {
         cmdStartPublicChat.setText("Chat Publico");
         cmdStartPublicChat.setBorder(null);
         cmdStartPublicChat.setBorderPainted(false);
+        cmdStartPublicChat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cmdStartPublicChat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdStartPublicChatActionPerformed(evt);
