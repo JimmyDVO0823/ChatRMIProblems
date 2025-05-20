@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/h2-2.3.232.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/RMIInterface.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/RMIProject.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -8,11 +8,11 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import Model.ClientCallBack;
 import java.net.UnknownHostException;
 import java.rmi.AlreadyBoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import Interface.IServer;
 
 public class ServerLauncher {
 

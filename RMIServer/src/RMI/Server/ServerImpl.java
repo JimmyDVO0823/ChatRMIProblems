@@ -1,14 +1,13 @@
 package RMI.Server;
 
-import Interface.IServer;
-import Model.ClientCallBack;
-
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import Interface.IServer;
+import Interface.ClientCallBack;
 
 public class ServerImpl extends UnicastRemoteObject implements IServer {
     private final Map<String, ClientCallBack> clients = new ConcurrentHashMap<>();

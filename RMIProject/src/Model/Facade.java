@@ -1,5 +1,6 @@
 package Model;
 
+import Interface.ClientCallBack;
 import Controlers.ChatMenuControler;
 import Controlers.ISubscriber;
 import Controlers.PublicChatControler;
