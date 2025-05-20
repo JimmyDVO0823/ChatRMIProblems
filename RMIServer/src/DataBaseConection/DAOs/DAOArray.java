@@ -1,6 +1,6 @@
-package DataBaseConection;
+package DataBaseConection.DAOs;
 
-import DTOs.User;
+import DataBaseConection.DTOs.User;
 
 import java.util.ArrayList;
 
