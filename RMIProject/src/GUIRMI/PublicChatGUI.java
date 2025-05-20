@@ -5,7 +5,8 @@
 package GUIRMI;
 
 import Controlers.PublicChatControler;
-
+import org.netbeans.lib.awtextra.AbsoluteLayout;
+import org.netbeans.lib.awtextra.AbsoluteConstraints;
 import javax.swing.*;
 
 /**
