@@ -4,10 +4,7 @@
  */
 package GUIRMI;
 
-import org.netbeans.lib.awtextra.AbsoluteConstraints;
-import org.netbeans.lib.awtextra.AbsoluteLayout;
 import Controlers.MenuControler;
-import java.awt.Color;
 
 import javax.swing.*;
 
