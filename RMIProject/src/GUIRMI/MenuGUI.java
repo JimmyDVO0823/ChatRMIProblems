@@ -5,7 +5,6 @@
 package GUIRMI;
 
 import Controlers.MenuControler;
-
 import javax.swing.*;
 
 /**
