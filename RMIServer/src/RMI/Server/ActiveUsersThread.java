@@ -1,13 +1,6 @@
 package RMI.Server;
 
-import Interface.IServer;
-import Model.ClientCallBack;
-
 import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class ActiveUsersThread extends Thread {
     ServerImpl server;
@@ -18,7 +11,12 @@ public class ActiveUsersThread extends Thread {
     public void run() {
         while (true) {
             System.out.println("corriendo");
-            server.runList();
+            try {
+                server.runList();
+            } catch (RemoteException e) {
+                System.out.println("notificado");
+                throw new RuntimeException(e);
+            }
             try {
                 sleep(4000);
             } catch (InterruptedException e) {

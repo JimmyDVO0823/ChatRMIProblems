@@ -6,6 +6,7 @@ import Model.ClientCallBack;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -111,24 +112,20 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
         //System.out.println("-----------------------");
     }
 
-    public void runList() {
-        ClientCallBack clientCallBackToDelete = null;
-        String usernameToDelete = "";
-        try {
-            for (Map.Entry<String, ClientCallBack> entry : clients.entrySet()) {
-                usernameToDelete = entry.getKey();
-                clientCallBackToDelete = entry.getValue();
-                clientCallBackToDelete.ping();
-            }
-        } catch (Exception e) {
-            System.out.println("usuario eliminandose...");
-            usersList.remove(usernameToDelete);
-            clients.remove(usernameToDelete);
+    // Método en ServerImpl
+    public void runList() throws RemoteException {
+        for (Iterator<Map.Entry<String,ClientCallBack>> it = clients.entrySet().iterator(); it.hasNext();) {
+            Map.Entry<String,ClientCallBack> entry = it.next();
+            String user = entry.getKey();
+            ClientCallBack cb = entry.getValue();
             try {
-                updateList();
-            } catch (RemoteException ex) {
-                System.out.println("EXCEPCION AL ACTUALIZAR LA LISTA");
+                cb.ping();  // Método dummy que lanza RemoteException si está caído
+            } catch (RemoteException e) {
+                it.remove();             // elimina del mapa
+                usersList.remove(user);  // elimina de la lista de nombres
+                updateList();            // notifica a los restantes
             }
         }
     }
+
 }
