@@ -92,6 +92,7 @@ public class PrivateChatGUI extends javax.swing.JFrame {
         cmdSendMessage.setForeground(new java.awt.Color(0, 0, 0));
         cmdSendMessage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIRMI/Images/SendMessageIcon.png"))); // NOI18N
         cmdSendMessage.setBorder(null);
+        cmdSendMessage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cmdSendMessage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdSendMessageActionPerformed(evt);
