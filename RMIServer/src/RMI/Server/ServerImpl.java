@@ -67,6 +67,22 @@ public class ServerImpl extends UnicastRemoteObject implements IServer {
         }
     }
 
+    @Override
+    public synchronized void unrevisterClient(String username) throws RemoteException {
+        // 1) Elimina el callback del map
+        ClientCallBack cb = clients.remove(username);
+        // 2) Elimina el nombre de la lista de usuarios
+        usersList.remove(username);
+        // 3) Si quieres, cierra el hilo de heartbeat si ya no quedan clientes
+        if (clients.isEmpty()) {
+            activeUsersThread.interrupt();
+        }
+        // 4) Notifica a todos los demás que la lista cambió
+        updateList();
+        System.out.println("Cliente '" + username + "' ha cerrado sesión");
+    }
+
+
     /**
      * Le da la bienvenida al usuario cuando entra
      *
