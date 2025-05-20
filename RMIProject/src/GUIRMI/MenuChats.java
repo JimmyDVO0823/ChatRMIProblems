@@ -59,7 +59,7 @@ public class MenuChats extends javax.swing.JFrame  {
         jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, -1, -1));
 
         cmdStartPrivateChat.setBackground(new java.awt.Color(51, 153, 255));
-        cmdStartPrivateChat.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        cmdStartPrivateChat.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         cmdStartPrivateChat.setForeground(new java.awt.Color(0, 0, 0));
         cmdStartPrivateChat.setText("Chat Privado");
         cmdStartPrivateChat.setBorder(null);
@@ -70,10 +70,10 @@ public class MenuChats extends javax.swing.JFrame  {
                 cmdStartPrivateChatActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdStartPrivateChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 130, 40));
+        jPanel1.add(cmdStartPrivateChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 100, 30));
 
         cmdStartPublicChat.setBackground(new java.awt.Color(51, 153, 255));
-        cmdStartPublicChat.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        cmdStartPublicChat.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         cmdStartPublicChat.setForeground(new java.awt.Color(0, 0, 0));
         cmdStartPublicChat.setText("Chat Publico");
         cmdStartPublicChat.setBorder(null);
@@ -84,7 +84,7 @@ public class MenuChats extends javax.swing.JFrame  {
                 cmdStartPublicChatActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdStartPublicChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 130, 40));
+        jPanel1.add(cmdStartPublicChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 100, 30));
 
         lblTitle.setFont(new java.awt.Font("Roboto Medium", 1, 24)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(0, 0, 0));

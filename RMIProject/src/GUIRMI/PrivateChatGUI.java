@@ -65,12 +65,12 @@ public class PrivateChatGUI extends javax.swing.JFrame {
         txtHistory.setRows(5);
         jScrollPane1.setViewportView(txtHistory);
 
-        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 580, 370));
+        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 580, 370));
 
         jLabel1.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Historial Privado");
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
 
         lblUser.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         lblUser.setForeground(new java.awt.Color(0, 0, 0));
@@ -86,7 +86,7 @@ public class PrivateChatGUI extends javax.swing.JFrame {
         txtMessagePrivateArea.setRows(5);
         jScrollPane2.setViewportView(txtMessagePrivateArea);
 
-        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 580, -1));
+        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 580, -1));
 
         cmdSendMessage.setBackground(new java.awt.Color(255, 255, 255));
         cmdSendMessage.setForeground(new java.awt.Color(0, 0, 0));
@@ -97,7 +97,7 @@ public class PrivateChatGUI extends javax.swing.JFrame {
                 cmdSendMessageActionPerformed(evt);
             }
         });
-        background.add(cmdSendMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 480, 30, 30));
+        background.add(cmdSendMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 480, 30, 30));
 
         cmdBackChatsMenu.setBackground(new java.awt.Color(0, 153, 255));
         cmdBackChatsMenu.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
@@ -109,7 +109,7 @@ public class PrivateChatGUI extends javax.swing.JFrame {
                 cmdBackChatsMenuActionPerformed(evt);
             }
         });
-        background.add(cmdBackChatsMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 100, 30));
+        background.add(cmdBackChatsMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 100, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

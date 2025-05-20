@@ -71,7 +71,7 @@ public class PublicChatGUI extends javax.swing.JFrame {
         txtMessagesHistory.setRows(5);
         jScrollPane1.setViewportView(txtMessagesHistory);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 660, 350));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 660, 350));
 
         txtMessage.setBackground(new java.awt.Color(255, 255, 255));
         txtMessage.setColumns(20);
@@ -79,12 +79,12 @@ public class PublicChatGUI extends javax.swing.JFrame {
         txtMessage.setRows(5);
         jScrollPane2.setViewportView(txtMessage);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 660, 110));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 660, 110));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Historial Publico");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
