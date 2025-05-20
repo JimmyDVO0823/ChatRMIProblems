@@ -18,7 +18,7 @@ public class ActiveUsersThread extends Thread {
                 throw new RuntimeException(e);
             }
             try {
-                sleep(4000);
+                sleep(2000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
